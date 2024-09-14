@@ -58,7 +58,7 @@ case $RESOLUTION in
 	media-ctl -d $MEDIANODE -V ''\''csi2'\'':0 [fmt:UYVY10_1X20/1920x1080 field:none colorspace:smpte170m]'
 	media-ctl -d $MEDIANODE -V ''\''csi2'\'':4 [fmt:UYVY10_1X20/1920x1080 field:none colorspace:smpte170m]'
 	v4l2-ctl -v width=1920,height=1080,pixelformat=V210
-	echo UYVY8_1X20 1920x1080 set
+	echo UYVY10_1X20 1920x1080 set
 ;;
 3)
 	echo 3 > /sys/module/tc358743/parameters/resolution
@@ -82,7 +82,7 @@ case $RESOLUTION in
 	media-ctl -d $MEDIANODE -V ''\''csi2'\'':0 [fmt:UYVY10_1X20/3840x2160 field:none colorspace:smpte170m]'
 	media-ctl -d $MEDIANODE -V ''\''csi2'\'':4 [fmt:UYVY10_1X20/3840x2160 field:none colorspace:smpte170m]'
 	v4l2-ctl -v width=3840,height=2160,pixelformat=V210
-	echo UYVY8_1X20 3840x2160 set
+	echo UYVY10_1X20 3840x2160 set
 ;;
 5)
 	#echo 5 > /sys/module/tc358743/parameters/resolution

@@ -7,7 +7,7 @@ then
 	exit -1
 fi
 RESOLUTION=$1
-CNT=20
+CNT=1
 
 case $RESOLUTION in
 1)
@@ -28,7 +28,7 @@ case $RESOLUTION in
 4)
 	FILENAME=UHD_3840x2160_30_10_`date +%Y%m%d%H%M%S`.yuv
 	echo $FILENAME
-	v4l2-ctl --verbose -d /dev/video0 --set-fmt-video=width=3840,height=2160,pixelformat='UYVY' --stream-mmap=4 --stream-skip=3 --stream-count=$CNT --stream-to=$FILENAME --stream-poll
+	v4l2-ctl --verbose -d /dev/video0 --set-fmt-video=width=3840,height=2160,pixelformat='Y210' --stream-mmap=4 --stream-skip=3 --stream-count=$CNT --stream-to=$FILENAME --stream-poll
 ;;
 5)
 	FILENAME=RGB_FHD_1920x1080_`date +%Y%m%d%H%M%S`.rgb
